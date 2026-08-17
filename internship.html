@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="张子悦的热设计实习经历。" />
+  <meta name="description" content="张子悦的 3D 工业相机热设计实习经历。" />
   <title>张子悦 | 实习经历</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -15,7 +15,8 @@
         <span>张子悦</span>
       </a>
       <div class="nav-links">
-        <a href="index.html#education">教育背景</a>
+        <a href="index.html">首页</a>
+        <a href="education.html">教育背景</a>
         <a class="active" href="internship.html">实习经历</a>
         <a href="projects.html">项目经历</a>
         <a href="awards.html">奖项和竞赛</a>
@@ -27,7 +28,7 @@
     <section class="page-title">
       <p class="eyebrow">Internship</p>
       <h1>实习经历</h1>
-      <p>围绕工业相机与结构光设备热设计，完成仿真分析、散热路径优化、风扇策略设计与实测验证。</p>
+      <p>围绕 3D 工业相机的热设计，完成散热设计、仿真分析、散热优化、风扇策略设计与实测验证。</p>
     </section>
 
     <section class="exp-block">
@@ -60,48 +61,18 @@
 
       <article class="exp-card">
         <span class="exp-index">01</span>
-        <h3>小视野高精度结构光相机散热设计、仿真及验证</h3>
-        <div class="chip-row">
-          <span class="chip blue">ICEPAK 仿真</span>
-          <span class="chip blue">被动散热</span>
-          <span class="chip blue">实测验证</span>
-        </div>
-
-        <div class="exp-split">
-          <div class="exp-col">
-            <h4>工作内容</h4>
-            <ul>
-              <li>面向 3C、锂电、汽车等高精度场景，通过 ICEPAK 仿真结合实测，分析 DMD、光机灯板、Sensor、FPGA 等关键热源。</li>
-              <li>识别裸机在 45℃ 环境下 DMD、光机灯板、Sensor 均存在较高超温风险。</li>
-              <li>在被动散热前提下，优化导热垫、结构凸台及安装钣金等散热路径。</li>
-              <li>结合亮度降低、采集间隔拉长等降功耗策略进行实测验证。</li>
-            </ul>
-          </div>
-          <div class="exp-col accent">
-            <h4>研究成果</h4>
-            <ul>
-              <li>DMD 保留约 2℃ 温度余量。</li>
-              <li>其他关键热源均留有 8℃ 以上温度余量。</li>
-              <li>整机满足高温工况下的稳定运行要求。</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="result-bar">
-          <span>DMD 余量约 2℃</span>
-          <span>其他热源余量 8℃+</span>
-          <span>被动散热方案</span>
-        </div>
-      </article>
-
-      <article class="exp-card">
-        <span class="exp-index">02</span>
         <h3>单线双目激光相机热设计、风扇散热策略设计及验证测试</h3>
         <div class="chip-row">
           <span class="chip teal">风冷 + 翅片</span>
           <span class="chip teal">NTC 控温</span>
           <span class="chip teal">fail-safe 保护</span>
         </div>
+
+        <figure class="device-figure">
+          <img src="assets/camera-laser.png" alt="单线双目激光相机产品图与视野范围示意"
+            onerror="this.closest('figure').classList.add('is-missing');" />
+          <figcaption>单线双目激光相机 · 大视野测量范围（单位：mm）</figcaption>
+        </figure>
 
         <div class="exp-split">
           <div class="exp-col">
@@ -128,6 +99,48 @@
           <span>Medium 35%</span>
           <span>High 50%</span>
           <span>温升满足要求</span>
+        </div>
+      </article>
+
+      <article class="exp-card">
+        <span class="exp-index">02</span>
+        <h3>小视野高精度结构光相机散热设计、仿真及验证</h3>
+        <div class="chip-row">
+          <span class="chip blue">ICEPAK 仿真</span>
+          <span class="chip blue">被动散热</span>
+          <span class="chip blue">实测验证</span>
+        </div>
+
+        <figure class="device-figure">
+          <img src="assets/camera-structured.png" alt="小视野高精度结构光相机产品图与视野范围示意"
+            onerror="this.closest('figure').classList.add('is-missing');" />
+          <figcaption>小视野高精度结构光相机 · 小视野测量范围（单位：mm）</figcaption>
+        </figure>
+
+        <div class="exp-split">
+          <div class="exp-col">
+            <h4>工作内容</h4>
+            <ul>
+              <li>面向 3C、锂电、汽车等高精度场景，通过 ICEPAK 仿真结合实测，分析 DMD、光机灯板、Sensor、FPGA 等关键热源。</li>
+              <li>识别裸机在 45℃ 环境下 DMD、光机灯板、Sensor 均存在较高超温风险。</li>
+              <li>在被动散热前提下，优化导热垫、结构凸台及安装钣金等散热路径。</li>
+              <li>结合亮度降低、采集间隔拉长等降功耗策略进行实测验证。</li>
+            </ul>
+          </div>
+          <div class="exp-col accent">
+            <h4>研究成果</h4>
+            <ul>
+              <li>DMD 保留约 2℃ 温度余量。</li>
+              <li>其他关键热源均留有 8℃ 以上温度余量。</li>
+              <li>整机满足高温工况下的稳定运行要求。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="result-bar">
+          <span>DMD 余量约 2℃</span>
+          <span>其他热源余量 8℃+</span>
+          <span>被动散热方案</span>
         </div>
       </article>
     </section>
