@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="张子悦的热设计实习经历。" />
+  <title>张子悦 | 实习经历</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="主导航">
+      <a class="brand" href="index.html" aria-label="张子悦个人主页">
+        <span class="brand-mark">Z</span>
+        <span>张子悦</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">教育背景</a>
+        <a class="active" href="internship.html">实习经历</a>
+        <a href="projects.html">项目经历</a>
+        <a href="awards.html">奖项和竞赛</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="eyebrow">Internship</p>
+      <h1>实习经历</h1>
+      <p>围绕工业相机与结构光设备热设计，完成仿真分析、散热路径优化、风扇策略设计与测试验证。</p>
+    </section>
+
+    <section class="page-section">
+      <div class="timeline">
+        <article class="timeline-item featured">
+          <div class="time">2026.06 - 至今</div>
+          <div class="content-block">
+            <div class="role-row">
+              <h2>梅卡曼德机器人科技股份有限公司</h2>
+              <span>热设计实习生</span>
+            </div>
+            <h3>小视野高精度结构光相机散热设计、仿真及验证</h3>
+            <ul>
+              <li>面向 3C、锂电、汽车等高精度场景，通过 ICEPAK 仿真与实测分析 DMD、光机灯板、Sensor、FPGA 等关键热源。</li>
+              <li>识别裸机在 45℃ 下 DMD、光机灯板、Sensor 存在较高超温风险。</li>
+              <li>在被动散热前提下，优化导热垫、结构凸台及安装钣金等散热路径，并结合亮度降低、采集间隔拉长等降功耗策略验证。</li>
+              <li>最终 DMD 保留约 2℃ 温度余量，其他热源均留有 8℃ 以上余量，满足高温工况稳定运行要求。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item featured">
+          <div class="time">2026.06 - 至今</div>
+          <div class="content-block">
+            <h3>单线双目激光相机热设计、风扇散热策略设计及验证测试</h3>
+            <ul>
+              <li>面向高温、强光等极端工业场景，确定“风冷 + 翅片”散热架构。</li>
+              <li>验证相机在 50% 风速下即可满足极端工况散热需求。</li>
+              <li>选取激光器 NTC 作为风扇核心控制依据，设计 Low 25% / Medium 35% / High 50% 三档转速控制逻辑。</li>
+              <li>制定滞回区间、延时策略及 fail-safe 保护机制，配合嵌入式完成风扇逻辑落地。</li>
+              <li>测试验证风扇及温升均满足要求。</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 张子悦</span>
+    <span>Thermal Simulation Portfolio</span>
+  </footer>
+</body>
+</html>
