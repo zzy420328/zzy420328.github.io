@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="张子悦的 3D 工业相机热设计实习经历。" />
   <title>张子悦 | 实习经历</title>
   <link rel="stylesheet" href="styles.css" />
@@ -27,27 +27,23 @@
   <main>
     <section class="page-title">
       <p class="eyebrow">Internship</p>
-      <h1>实习经历</h1>
-      <p>围绕 3D 工业相机的热设计，完成散热设计、仿真分析、散热优化、风扇策略设计与实测验证。</p>
+      <h1 data-edit>实习经历</h1>
+      <p data-edit>围绕 3D 工业相机的热设计，完成散热设计、仿真分析、散热优化、风扇策略设计与实测验证。</p>
     </section>
 
     <section class="exp-block">
-      <div class="stat-grid">
+      <div class="stat-grid stat-grid-3">
         <div class="stat-card c1">
-          <strong>45℃</strong>
-          <span>高温工况验证</span>
+          <strong data-edit>3D 工业相机</strong>
+          <span data-edit>热设计</span>
         </div>
         <div class="stat-card c2">
-          <strong>8℃+</strong>
-          <span>关键热源温度余量</span>
+          <strong data-edit>ICEPAK</strong>
+          <span data-edit>仿真 + 实测</span>
         </div>
         <div class="stat-card c3">
-          <strong>50%</strong>
-          <span>风速即满足极端工况</span>
-        </div>
-        <div class="stat-card c4">
-          <strong>3 档</strong>
-          <span>风扇转速控制策略</span>
+          <strong data-edit>风扇控制</strong>
+          <span data-edit>三档转速逻辑</span>
         </div>
       </div>
 
@@ -58,93 +54,110 @@
           <span class="exp-logo-text">MM</span>
         </div>
         <div>
-          <h2>梅卡曼德机器人科技股份有限公司</h2>
-          <p>热设计实习生 · 2026.06 - 至今</p>
+          <h2 data-edit>梅卡曼德机器人科技股份有限公司</h2>
+          <p data-edit>热设计实习生 · 2026.06 - 2026.08</p>
         </div>
       </div>
 
       <article class="exp-card">
         <span class="exp-index">01</span>
-        <h3>单线双目激光相机热设计、风扇散热策略设计及验证测试</h3>
+        <h3 data-edit>单线双目激光相机</h3>
         <div class="chip-row">
-          <span class="chip teal">风冷 + 翅片</span>
-          <span class="chip teal">NTC 控温</span>
-          <span class="chip teal">fail-safe 保护</span>
+          <span class="chip teal" data-edit>风冷 + 翅片</span>
+          <span class="chip teal" data-edit>NTC 控温</span>
+          <span class="chip teal" data-edit>fail-safe 保护</span>
         </div>
 
         <figure class="device-figure">
           <img src="assets/camera-laser.png" alt="单线双目激光相机产品图与视野范围示意"
             onerror="this.closest('figure').classList.add('is-missing');" />
-          <figcaption>单线双目激光相机 · 大视野测量范围（单位：mm）</figcaption>
+          <figcaption data-edit>单线双目激光相机 · 大视野测量范围（单位：mm）</figcaption>
         </figure>
 
-        <div class="exp-split">
+        <div class="exp-split exp-split-3">
+          <div class="exp-col scene">
+            <h4>面向场景</h4>
+            <ul>
+              <li data-edit>高反光、高温、强光、户外等极端工况下的三维检测与定位引导。</li>
+            </ul>
+          </div>
           <div class="exp-col">
             <h4>工作内容</h4>
             <ul>
-              <li>面向高温、强光等极端工业场景开展相机热设计，确定“风冷 + 翅片”散热架构。</li>
-              <li>验证相机在 50% 风速下即可满足极端工况散热需求。</li>
-              <li>为降低功耗与噪音，选取激光器 NTC 作为风扇核心控制依据。</li>
-              <li>设计 Low 25% / Medium 35% / High 50% 三档转速控制逻辑，并制定滞回区间、延时策略及 fail-safe 保护机制。</li>
+              <li data-edit>整机采用碳纤维外壳，散热能力弱，而激光器、振镜等器件温度规格仅 55℃，需保证 45℃ 高温下正常运行，故采用风扇主动散热。</li>
+              <li data-edit>经仿真确定“风冷 + 翅片”架构：5015 轴流风扇底部侧吹，翅片齿厚 2.5mm、高 23mm、间距 6mm，上方盖板与翅片形成风道，一侧留 30mm 出风口。</li>
+              <li data-edit>结合仿真与实测判断风扇去留及转速，验证 50% 风速即可满足极端工况散热需求。</li>
+              <li data-edit>在 FPGA、电源芯片等关键部件与激光器、Sensor 等热敏器件不超规格的前提下尽量降低转速，以降噪音、省功耗、延长风扇寿命。</li>
+              <li data-edit>设计 Low 25% / Medium 35% / High 50% 三档转速控制逻辑，并制定滞回区间、延时策略及 fail-safe 保护机制。</li>
             </ul>
+
+            <figure class="device-figure inline-figure">
+              <img src="assets/fan-control.png" alt="风扇三档转速滞回控制逻辑示意图"
+                onerror="this.closest('figure').classList.add('is-missing');" />
+              <figcaption data-edit>风扇三档转速滞回控制逻辑</figcaption>
+            </figure>
           </div>
           <div class="exp-col accent">
             <h4>研究成果</h4>
             <ul>
-              <li>完成单线双目激光相机整机热设计。</li>
-              <li>配合嵌入式团队完成风扇控制逻辑落地。</li>
-              <li>测试验证风扇表现与温升均满足设计要求。</li>
+              <li data-edit>完成单线双目激光相机整机热设计。</li>
+              <li data-edit>配合嵌入式团队完成风扇控制逻辑落地。</li>
+              <li data-edit>测试验证风扇表现与温升均满足设计要求。</li>
             </ul>
           </div>
         </div>
 
         <div class="result-bar">
-          <span>Low 25%</span>
-          <span>Medium 35%</span>
-          <span>High 50%</span>
-          <span>温升满足要求</span>
+          <span data-edit>Low 25%</span>
+          <span data-edit>Medium 35%</span>
+          <span data-edit>High 50%</span>
+          <span data-edit>温升满足要求</span>
         </div>
       </article>
 
       <article class="exp-card">
         <span class="exp-index">02</span>
-        <h3>小视野高精度结构光相机散热设计、仿真及验证</h3>
+        <h3 data-edit>小视野高精度结构光相机</h3>
         <div class="chip-row">
-          <span class="chip blue">ICEPAK 仿真</span>
-          <span class="chip blue">被动散热</span>
-          <span class="chip blue">实测验证</span>
+          <span class="chip blue" data-edit>ICEPAK 仿真</span>
+          <span class="chip blue" data-edit>被动散热</span>
+          <span class="chip blue" data-edit>实测验证</span>
         </div>
 
         <figure class="device-figure">
           <img src="assets/camera-structured.png" alt="小视野高精度结构光相机产品图与视野范围示意"
             onerror="this.closest('figure').classList.add('is-missing');" />
-          <figcaption>小视野高精度结构光相机 · 小视野测量范围（单位：mm）</figcaption>
+          <figcaption data-edit>小视野高精度结构光相机 · 小视野测量范围（单位：mm）</figcaption>
         </figure>
 
-        <div class="exp-split">
+        <div class="exp-split exp-split-3">
+          <div class="exp-col scene">
+            <h4>面向场景</h4>
+            <ul>
+              <li data-edit>面向 3C、锂电、汽车等高精度柔性装配场景。</li>
+            </ul>
+          </div>
           <div class="exp-col">
             <h4>工作内容</h4>
             <ul>
-              <li>面向 3C、锂电、汽车等高精度场景，通过 ICEPAK 仿真结合实测，分析 DMD、光机灯板、Sensor、FPGA 等关键热源。</li>
-              <li>识别裸机在 45℃ 环境下 DMD、光机灯板、Sensor 均存在较高超温风险。</li>
-              <li>在被动散热前提下，优化导热垫、结构凸台及安装钣金等散热路径。</li>
-              <li>结合亮度降低、采集间隔拉长等降功耗策略进行实测验证。</li>
+              <li data-edit>通过 ICEPAK 仿真分析 DMD、光机灯板、Sensor、FPGA 等关键热源，识别裸机在 45℃ 环境下 DMD、光机灯板、Sensor 均存在较高超温风险。</li>
+              <li data-edit>在被动散热前提下优化导热垫、结构凸台及安装钣金等散热路径，并结合亮度降低、采集间隔拉长等降功耗策略完成实测验证。</li>
             </ul>
           </div>
           <div class="exp-col accent">
             <h4>研究成果</h4>
             <ul>
-              <li>DMD 保留约 2℃ 温度余量。</li>
-              <li>其他关键热源均留有 8℃ 以上温度余量。</li>
-              <li>整机满足高温工况下的稳定运行要求。</li>
+              <li data-edit>DMD 保留约 2℃ 温度余量。</li>
+              <li data-edit>其他关键热源均留有 8℃ 以上温度余量。</li>
+              <li data-edit>整机满足高温工况下的稳定运行要求。</li>
             </ul>
           </div>
         </div>
 
         <div class="result-bar">
-          <span>DMD 余量约 2℃</span>
-          <span>其他热源余量 8℃+</span>
-          <span>被动散热方案</span>
+          <span data-edit>DMD 余量约 2℃</span>
+          <span data-edit>其他热源余量 8℃+</span>
+          <span data-edit>被动散热方案</span>
         </div>
       </article>
     </section>
@@ -154,5 +167,7 @@
     <span>© 2026 张子悦</span>
     <span>Thermal Design Internship</span>
   </footer>
+
+  <script src="admin.js"></script>
 </body>
 </html>

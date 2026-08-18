@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="张子悦的个人主页，动力工程及工程热物理硕士，求职意向热仿真工程师。" />
   <title>张子悦 | 首页</title>
   <link rel="stylesheet" href="styles.css" />
@@ -26,11 +26,8 @@
 
   <section class="landing">
     <div class="landing-bg" aria-hidden="true"></div>
-    <video class="landing-video" autoplay muted loop playsinline preload="auto"
-      aria-hidden="true"
-      onerror="this.style.display='none';">
-      <source src="assets/cover.mp4" type="video/mp4" />
-    </video>
+    <video class="landing-video" muted loop playsinline preload="none"
+      aria-hidden="true" id="coverVideo"></video>
     <div class="landing-veil" aria-hidden="true"></div>
 
     <div class="landing-inner">
@@ -52,5 +49,41 @@
 
     <a class="scroll-hint" href="education.html" aria-label="进入教育背景">ENTER</a>
   </section>
+
+  <script>
+    // 视频按需加载：窄屏、省流量模式或慢网络下不加载，直接用静态背景，避免卡顿
+    (function () {
+      var video = document.getElementById('coverVideo');
+      if (!video) return;
+
+      var conn = navigator.connection || {};
+      var slow = conn.saveData === true ||
+        /(^|\b)(2g|slow-2g|3g)$/.test(conn.effectiveType || '');
+      var narrow = window.matchMedia('(max-width: 720px)').matches;
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (slow || narrow || reduced) {
+        video.remove();
+        return;
+      }
+
+      video.addEventListener('canplay', function () {
+        video.classList.add('is-ready');
+        video.play().catch(function () {});
+      }, { once: true });
+
+      video.addEventListener('error', function () {
+        video.remove();
+      }, { once: true });
+
+      var src = document.createElement('source');
+      src.src = 'assets/cover.mp4';
+      src.type = 'video/mp4';
+      video.appendChild(src);
+      video.preload = 'auto';
+      video.load();
+    })();
+  </script>
+  <script src="admin.js"></script>
 </body>
 </html>

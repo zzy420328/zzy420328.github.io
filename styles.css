@@ -154,11 +154,13 @@ main {
 .landing-bg {
   position: absolute;
   inset: 0;
-  background-color: #37506b;
-  background-image: url("assets/cover.jpg");
+  background-color: #2b3a4d;
+  background-image:
+    radial-gradient(circle at 22% 28%, rgba(94, 130, 176, 0.55), transparent 55%),
+    radial-gradient(circle at 78% 72%, rgba(46, 74, 104, 0.6), transparent 58%),
+    linear-gradient(160deg, #35506e 0%, #24354a 55%, #1b2735 100%);
   background-size: cover;
-  background-position: center 42%;
-  transform: scale(1.04);
+  background-position: center;
 }
 
 .landing-video {
@@ -168,6 +170,12 @@ main {
   height: 100%;
   object-fit: cover;
   transform: scale(1.03);
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+.landing-video.is-ready {
+  opacity: 1;
 }
 
 .landing-veil {
@@ -380,6 +388,10 @@ main {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
   margin-bottom: 44px;
+}
+
+.stat-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .stat-card {
@@ -680,6 +692,30 @@ main {
   margin-top: 22px;
 }
 
+.exp-split-3 {
+  grid-template-columns: 0.8fr 1.5fr 0.9fr;
+  align-items: start;
+}
+
+.exp-col.scene {
+  background: #f2f7f2;
+}
+
+.exp-col.scene h4 {
+  color: #2f7a4d;
+}
+
+.inline-figure {
+  margin-top: 18px;
+  padding: 14px;
+  background: #fff;
+}
+
+.inline-figure figcaption {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
 .device-figure {
   margin: 22px 0 0;
   padding: 24px;
@@ -926,14 +962,86 @@ li + li {
   font-size: 13px;
 }
 
+/* ---------- 管理员编辑模式 ---------- */
+
+.admin-bar {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  z-index: 90;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100% - 24px);
+  padding: 10px 14px;
+  border-radius: 980px;
+  background: rgba(29, 29, 31, 0.9);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.3);
+}
+
+.admin-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 600;
+  padding-right: 4px;
+}
+
+.admin-bar button {
+  padding: 8px 15px;
+  border: 0;
+  border-radius: 980px;
+  background: var(--accent);
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.admin-bar button:hover {
+  opacity: 0.85;
+}
+
+.admin-bar button.ghost {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.admin-bar button[hidden] {
+  display: none;
+}
+
+[data-edit].is-editing {
+  outline: 2px dashed rgba(0, 113, 227, 0.5);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+[data-edit].is-editing:focus {
+  outline-color: var(--accent);
+  outline-style: solid;
+  background: rgba(0, 113, 227, 0.06);
+}
+
+.editing-mode {
+  padding-bottom: 70px;
+}
+
 /* ---------- 响应式 ---------- */
 
 @media (max-width: 900px) {
-  .stat-grid {
+  .stat-grid,
+  .stat-grid-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .exp-split,
+  .exp-split-3,
   .project-grid,
   .split-section,
   .skill-grid {
@@ -1047,12 +1155,86 @@ li + li {
     width: min(100% - 28px, 1080px);
   }
 
-  .stat-grid {
+  .stat-grid,
+  .stat-grid-3 {
     grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 18px 20px;
+  }
+
+  .stat-card strong {
+    font-size: 24px;
   }
 
   .award-list div {
     grid-template-columns: 1fr;
     gap: 4px;
+  }
+
+  .landing h1 {
+    font-size: 30px;
+  }
+
+  .landing-contacts {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .landing-contacts a {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .exp-company {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .exp-company h2 {
+    font-size: 19px;
+  }
+
+  .page-title {
+    padding: 44px 0 30px;
+  }
+
+  .page-section {
+    padding: 24px 0 48px;
+  }
+
+  .admin-bar {
+    bottom: 12px;
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .admin-bar button {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (hover: none) {
+  .avatar-hint {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.28);
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-hint::after {
+    animation: none;
+  }
+
+  .landing-video {
+    transition: none;
   }
 }
