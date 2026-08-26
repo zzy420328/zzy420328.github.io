@@ -1540,6 +1540,15 @@ li + li {
   font-size: 13px;
 }
 
+.publication-list .paper-brief {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  color: #57575c;
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+
 .paper-link {
   display: inline-flex;
   align-items: center;
