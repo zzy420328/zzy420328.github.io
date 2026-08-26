@@ -1566,6 +1566,13 @@ li + li {
   line-height: 1.45;
 }
 
+.conference-grid .conf-cn {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .conference-grid p {
   margin: 0;
   color: var(--muted);
