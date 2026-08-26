@@ -513,6 +513,25 @@ main {
   margin-bottom: 16px;
 }
 
+.lab-tag {
+  align-self: flex-start;
+  margin-left: auto;
+  padding: 6px 14px;
+  border-radius: 980px;
+  background: linear-gradient(135deg, var(--accent), var(--indigo));
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(0, 113, 227, 0.25);
+}
+
+.timeline-item.alt .lab-tag {
+  background: linear-gradient(135deg, var(--indigo), var(--teal));
+  box-shadow: 0 6px 16px rgba(94, 92, 230, 0.25);
+}
+
 .school-badge {
   display: grid;
   place-items: center;
@@ -2073,6 +2092,132 @@ li + li {
   }
 
   .landing-video {
+    transition: none;
+  }
+}
+
+/* ---------- 页面细节丰富 ---------- */
+
+/* 小标题前的渐变强调线 */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--indigo));
+}
+
+/* 卡片统一悬停浮起 */
+.t-card,
+.skill-card,
+.split-card,
+.publication-list article,
+.story-card,
+.conference-grid article,
+.competition-card,
+.compact-award,
+.paper-feature,
+.featured-award {
+  transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.3, 1),
+    box-shadow 0.32s ease;
+}
+
+.t-card:hover,
+.skill-card:hover,
+.split-card:hover,
+.publication-list article:hover,
+.story-card:hover,
+.conference-grid article:hover,
+.competition-card:hover,
+.compact-award:hover,
+.paper-feature:hover,
+.featured-award:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+/* 发表列表左侧强调条 */
+.publication-list article {
+  position: relative;
+}
+
+.publication-list article::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 3px 0 0 3px;
+  background: linear-gradient(180deg, var(--accent), var(--indigo));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.publication-list article:hover::before {
+  opacity: 1;
+}
+
+/* chip 悬停微交互 */
+.chip {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chip:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* 滚动渐入（现代浏览器渐进增强，旧浏览器正常显示） */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .timeline-item,
+    .skill-card,
+    .split-card,
+    .publication-list article,
+    .story-card,
+    .conference-grid article,
+    .competition-card,
+    .featured-award,
+    .paper-feature,
+    .culture-section,
+    .research-intro {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 22%;
+    }
+  }
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t-card,
+  .skill-card,
+  .split-card,
+  .publication-list article,
+  .story-card,
+  .conference-grid article,
+  .competition-card,
+  .compact-award,
+  .paper-feature,
+  .featured-award,
+  .chip {
     transition: none;
   }
 }
