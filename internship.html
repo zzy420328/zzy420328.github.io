@@ -19,13 +19,14 @@
         <a href="education.html">教育背景</a>
         <a class="active" href="internship.html">实习经历</a>
         <a href="projects.html">项目经历</a>
-        <a href="awards.html">奖项和竞赛</a>
+        <a href="awards.html">科研经历</a>
+        <a href="other.html">其他</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="page-title">
+    <section class="page-title internship-title">
       <p class="eyebrow">Internship</p>
       <h1 data-edit>实习经历</h1>
       <p data-edit>围绕 3D 工业相机的热设计，完成散热设计、仿真分析、散热优化、风扇策略设计与实测验证。</p>
@@ -74,44 +75,46 @@
           <figcaption data-edit>单线双目激光相机 · 大视野测量范围（单位：mm）</figcaption>
         </figure>
 
-        <div class="exp-split exp-split-3">
+        <div class="exp-summary">
           <div class="exp-col scene">
             <h4>面向场景</h4>
             <ul>
-              <li data-edit>高反光、高温、强光、户外等极端工况下的三维检测与定位引导。</li>
+              <li data-edit>面向<strong>高反光、高温、强光及户外</strong>等复杂工况的三维检测与定位引导。</li>
             </ul>
-          </div>
-          <div class="exp-col">
-            <h4>工作内容</h4>
-            <ul>
-              <li data-edit>整机采用碳纤维外壳，散热能力弱，而激光器、振镜等器件温度规格仅 55℃，需保证 45℃ 高温下正常运行，故采用风扇主动散热。</li>
-              <li data-edit>经仿真确定“风冷 + 翅片”架构：5015 轴流风扇底部侧吹，翅片齿厚 2.5mm、高 23mm、间距 6mm，上方盖板与翅片形成风道，一侧留 30mm 出风口。</li>
-              <li data-edit>结合仿真与实测判断风扇去留及转速，验证 50% 风速即可满足极端工况散热需求。</li>
-              <li data-edit>在 FPGA、电源芯片等关键部件与激光器、Sensor 等热敏器件不超规格的前提下尽量降低转速，以降噪音、省功耗、延长风扇寿命。</li>
-              <li data-edit>设计 Low 25% / Medium 35% / High 50% 三档转速控制逻辑，并制定滞回区间、延时策略及 fail-safe 保护机制。</li>
-            </ul>
-
-            <figure class="device-figure inline-figure">
-              <img src="assets/fan-control.png" alt="风扇三档转速滞回控制逻辑示意图"
-                onerror="this.closest('figure').classList.add('is-missing');" />
-              <figcaption data-edit>风扇三档转速滞回控制逻辑</figcaption>
-            </figure>
           </div>
           <div class="exp-col accent">
-            <h4>研究成果</h4>
+            <h4>项目结果</h4>
             <ul>
-              <li data-edit>完成单线双目激光相机整机热设计。</li>
-              <li data-edit>配合嵌入式团队完成风扇控制逻辑落地。</li>
-              <li data-edit>测试验证风扇表现与温升均满足设计要求。</li>
+              <li data-edit>完成<strong>整机主动散热方案</strong>与风扇选型。</li>
+              <li data-edit>推动<strong>三档风扇控制逻辑</strong>在嵌入式端落地。</li>
+              <li data-edit>DVT 阶段<strong>6 个测试工况</strong>均满足温度规格。</li>
             </ul>
           </div>
         </div>
 
+        <div class="work-section">
+          <div class="work-heading">
+            <span>Thermal Design Process</span>
+            <h4>工作内容</h4>
+          </div>
+          <div class="work-steps">
+            <article><span>01</span><p data-edit><strong>热约束识别：</strong>针对整机约 <strong>30 W</strong> 功耗、碳纤维外壳导热弱及激光器等器件温度裕量有限的问题，明确 <strong>45℃ 环境稳定运行</strong>目标。</p></article>
+            <article><span>02</span><p data-edit><strong>散热架构设计：</strong>结合竞品调研与热源分布，确定顶部轴流风扇主动散热方案，完成<strong>风扇选型、风道设计与 IP65 防护评估</strong>。</p></article>
+            <article><span>03</span><p data-edit><strong>仿真—实测闭环：</strong>基于热仿真指导方案迭代，并在 EVT / DVT 阶段完成传感器校准和极限工况验证，<strong>6 个测试工况全部达标</strong>。</p></article>
+            <article><span>04</span><p data-edit><strong>控制逻辑落地：</strong>以激光器 NTC 为控制量，设计 <strong>25% / 35% / 50%</strong> 三档转速、5℃ 滞回与 fail-safe 保护，兼顾散热、噪声、功耗和寿命。</p></article>
+          </div>
+          <figure class="device-figure inline-figure">
+            <img src="assets/fan-control.png" alt="风扇三档转速滞回控制逻辑示意图"
+              onerror="this.closest('figure').classList.add('is-missing');" />
+            <figcaption data-edit>风扇三档转速滞回控制逻辑</figcaption>
+          </figure>
+        </div>
+
         <div class="result-bar">
-          <span data-edit>Low 25%</span>
-          <span data-edit>Medium 35%</span>
-          <span data-edit>High 50%</span>
-          <span data-edit>温升满足要求</span>
+          <span data-edit>45℃ 环境目标</span>
+          <span data-edit>IP65 风扇</span>
+          <span data-edit>三档 NTC 控温</span>
+          <span data-edit>6 个工况达标</span>
         </div>
       </article>
 
@@ -130,27 +133,31 @@
           <figcaption data-edit>小视野高精度结构光相机 · 小视野测量范围（单位：mm）</figcaption>
         </figure>
 
-        <div class="exp-split exp-split-3">
+        <div class="exp-summary">
           <div class="exp-col scene">
             <h4>面向场景</h4>
             <ul>
               <li data-edit>面向 3C、锂电、汽车等高精度柔性装配场景。</li>
             </ul>
           </div>
-          <div class="exp-col">
-            <h4>工作内容</h4>
-            <ul>
-              <li data-edit>通过 ICEPAK 仿真分析 DMD、光机灯板、Sensor、FPGA 等关键热源，识别裸机在 45℃ 环境下 DMD、光机灯板、Sensor 均存在较高超温风险。</li>
-              <li data-edit>在被动散热前提下优化导热垫、结构凸台及安装钣金等散热路径，并结合亮度降低、采集间隔拉长等降功耗策略完成实测验证。</li>
-            </ul>
-          </div>
           <div class="exp-col accent">
-            <h4>研究成果</h4>
+            <h4>项目结果</h4>
             <ul>
               <li data-edit>DMD 保留约 2℃ 温度余量。</li>
               <li data-edit>其他关键热源均留有 8℃ 以上温度余量。</li>
               <li data-edit>整机满足高温工况下的稳定运行要求。</li>
             </ul>
+          </div>
+        </div>
+
+        <div class="work-section">
+          <div class="work-heading">
+            <span>Passive Cooling Process</span>
+            <h4>工作内容</h4>
+          </div>
+          <div class="work-steps work-steps-2">
+            <article><span>01</span><p data-edit>通过 ICEPAK 分析 DMD、光机灯板、Sensor、FPGA 等关键热源，识别裸机在 45℃ 环境下的超温风险。</p></article>
+            <article><span>02</span><p data-edit>在被动散热前提下优化导热垫、结构凸台与安装钣金等散热路径，并结合降功耗策略完成实测验证。</p></article>
           </div>
         </div>
 
