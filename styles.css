@@ -1591,7 +1591,7 @@ li + li {
   display: grid;
   grid-template-columns: 0.7fr 1.3fr;
   gap: 30px;
-  align-items: center;
+  align-items: start;
   padding-bottom: 96px;
 }
 
@@ -1609,9 +1609,12 @@ li + li {
   align-items: center;
   gap: 14px;
   margin-top: 28px;
-  padding: 18px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--amber);
   border-radius: 16px;
-  background: #fff3dd;
+  background: var(--card);
+  box-shadow: var(--shadow-soft);
 }
 
 .culture-highlight strong {
