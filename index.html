@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="张子悦的个人主页，动力工程及工程热物理硕士，求职意向热仿真工程师。" />
   <title>张子悦 | 首页</title>
+  <link rel="preload" as="image" href="assets/cover-poster.jpg" fetchpriority="high" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="cover-page">
@@ -28,7 +29,7 @@
   <section class="landing">
     <div class="landing-bg" aria-hidden="true"></div>
     <video class="landing-video" muted loop playsinline preload="none"
-      aria-hidden="true" id="coverVideo"></video>
+      poster="assets/cover-poster.jpg" aria-hidden="true" id="coverVideo"></video>
     <div class="landing-veil" aria-hidden="true"></div>
 
     <div class="landing-inner">
@@ -52,33 +53,38 @@
   </section>
 
   <script>
-    // 视频按需加载：窄屏、省流量模式或慢网络下不加载，直接用静态背景，避免卡顿
+    // 视频加载策略：先用 poster 海报图立即呈现画面，视频就绪后无缝接管播放。
+    // 窄屏、省流量模式或减少动态偏好下不加载视频，直接用海报/静态背景。
     (function () {
       var video = document.getElementById('coverVideo');
       if (!video) return;
 
       var conn = navigator.connection || {};
       var slow = conn.saveData === true ||
-        /(^|\b)(2g|slow-2g|3g)$/.test(conn.effectiveType || '');
+        /(^|\b)(2g|slow-2g)$/.test(conn.effectiveType || '');
       var narrow = window.matchMedia('(max-width: 720px)').matches;
       var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+      // 海报图立即淡入，打开页面即有画面
+      video.classList.add('is-ready');
+
       if (slow || narrow || reduced) {
-        video.remove();
+        // 仅保留海报，不下载视频
         return;
       }
 
-      video.addEventListener('canplay', function () {
-        video.classList.add('is-ready');
+      function start() {
         video.play().catch(function () {});
-      }, { once: true });
+      }
+      video.addEventListener('loadeddata', start, { once: true });
+      video.addEventListener('canplay', start, { once: true });
 
       video.addEventListener('error', function () {
-        video.remove();
+        // 视频失败时保留海报图
       }, { once: true });
 
       var src = document.createElement('source');
-      src.src = 'assets/cover.mp4';
+      src.src = 'assets/cover-720.mp4';
       src.type = 'video/mp4';
       video.appendChild(src);
       video.preload = 'auto';
