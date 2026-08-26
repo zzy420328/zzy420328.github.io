@@ -1357,7 +1357,6 @@ li + li {
 
 .research-numbers div {
   padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.28);
 }
 
 .research-numbers strong,
@@ -1366,7 +1365,7 @@ li + li {
 }
 
 .research-numbers strong {
-  color: #fff;
+  color: #d4af37;
   font-size: 42px;
   font-weight: 700;
   line-height: 1;
