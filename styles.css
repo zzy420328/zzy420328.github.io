@@ -1659,6 +1659,7 @@ li + li {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
+  margin-top: 52px;
 }
 
 .culture-gallery figure {
@@ -1989,6 +1990,10 @@ li + li {
     grid-template-columns: 1fr;
   }
 
+  .culture-gallery {
+    margin-top: 0;
+  }
+
   .more-awards article {
     grid-template-columns: 1fr;
     gap: 5px;
@@ -2225,6 +2230,142 @@ li + li {
   .paper-feature,
   .featured-award,
   .chip {
+    transition: none;
+  }
+}
+
+/* ---------- 动态设计 ---------- */
+
+/* 页头标题：漂浮渐变光晕 + 载入淡入 */
+.page-title {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-title::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -60px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(0, 113, 227, 0.18),
+    rgba(94, 92, 230, 0.12) 45%,
+    transparent 70%
+  );
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: -1;
+  animation: float-glow 9s ease-in-out infinite;
+}
+
+.page-title h1,
+.page-title > p {
+  animation: title-in 0.7s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+
+.page-title > p {
+  animation-delay: 0.1s;
+}
+
+@keyframes float-glow {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(-26px, 22px) scale(1.12);
+    opacity: 1;
+  }
+}
+
+@keyframes title-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 图片悬停缓慢放大 */
+.culture-gallery figure img,
+.story-card img,
+.conference-grid img {
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+.culture-gallery figure:hover img,
+.story-card:hover img,
+.conference-grid article:hover img {
+  transform: scale(1.06);
+}
+
+/* 导航项悬停轻微上浮 */
+.nav-links a {
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-links a:hover {
+  transform: translateY(-1px);
+}
+
+/* 品牌标记悬停旋转发光 */
+.brand-mark {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.3, 1),
+    box-shadow 0.35s ease;
+}
+
+.brand:hover .brand-mark {
+  transform: rotate(360deg) scale(1.08);
+  box-shadow: 0 6px 18px rgba(94, 92, 230, 0.4);
+}
+
+/* 数据色块与奖项标记悬停浮起 */
+.stat-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+/* 徐明厚课题组标签轻微呼吸 */
+.lab-tag {
+  animation: tag-pulse 3.2s ease-in-out infinite;
+}
+
+@keyframes tag-pulse {
+  0%,
+  100% {
+    box-shadow: 0 6px 16px rgba(0, 113, 227, 0.25);
+  }
+  50% {
+    box-shadow: 0 8px 22px rgba(94, 92, 230, 0.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-title::before,
+  .page-title h1,
+  .page-title > p,
+  .lab-tag {
+    animation: none;
+  }
+
+  .culture-gallery figure img,
+  .story-card img,
+  .conference-grid img,
+  .nav-links a,
+  .brand-mark,
+  .stat-card {
     transition: none;
   }
 }
