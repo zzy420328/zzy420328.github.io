@@ -545,7 +545,8 @@ main {
 .lab-tag b {
   display: inline-block;
   margin-left: 2px;
-  font-weight: 700;
+  color: #ffd54a;
+  font-weight: 900;
   transition: transform 0.25s ease;
 }
 
