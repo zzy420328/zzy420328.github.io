@@ -514,9 +514,17 @@ main {
   margin-bottom: 16px;
 }
 
+.lab-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-self: flex-start;
+  gap: 8px;
+  margin-left: auto;
+}
+
 .lab-tag {
   align-self: flex-start;
-  margin-left: auto;
   padding: 6px 14px;
   border-radius: 980px;
   background: linear-gradient(135deg, var(--accent), var(--indigo));
@@ -526,6 +534,12 @@ main {
   letter-spacing: 0.02em;
   white-space: nowrap;
   box-shadow: 0 6px 16px rgba(0, 113, 227, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lab-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(94, 92, 230, 0.4);
 }
 
 .timeline-item.alt .lab-tag {
@@ -2338,9 +2352,13 @@ li + li {
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
 }
 
-/* 徐明厚课题组标签轻微呼吸 */
+/* 课题组/实验室标签轻微呼吸 */
 .lab-tag {
   animation: tag-pulse 3.2s ease-in-out infinite;
+}
+
+.lab-tag:hover {
+  animation-play-state: paused;
 }
 
 @keyframes tag-pulse {
