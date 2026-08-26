@@ -704,6 +704,28 @@ main {
   font-weight: 700;
 }
 
+.exp-company .company-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.exp-company .company-link:hover {
+  color: #ffd54a;
+}
+
+.exp-company .company-link b {
+  color: #ffd54a;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.exp-company .company-link:hover b {
+  transform: translate(2px, -2px);
+}
+
 .exp-company p {
   margin: 4px 0 0;
   font-size: 15px;
