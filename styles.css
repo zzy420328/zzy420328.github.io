@@ -272,6 +272,7 @@ main {
   font-size: clamp(16px, 2.4vw, 20px);
   color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
+  line-height: 1.7;
 }
 
 .landing-contacts {
