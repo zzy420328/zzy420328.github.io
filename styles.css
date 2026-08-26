@@ -1602,6 +1602,28 @@ li + li {
   line-height: 1.45;
 }
 
+.conference-grid .conf-link {
+  display: inline;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.conference-grid .conf-link:hover {
+  color: var(--accent);
+}
+
+.conference-grid .conf-link b {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--accent);
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.conference-grid .conf-link:hover b {
+  transform: translate(2px, -2px);
+}
+
 .conference-grid .conf-cn {
   margin: 0 0 10px;
   color: var(--ink);
