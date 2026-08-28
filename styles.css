@@ -1381,6 +1381,21 @@ li + li {
   font-weight: 750;
 }
 
+.skill-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.skill-logos img {
+  height: 40px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+}
+
 /* ---------- 其他经历 ---------- */
 
 .other-title {
