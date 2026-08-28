@@ -1328,8 +1328,11 @@ li + li {
 
 .skill-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   min-height: 310px;
-  padding: 30px;
+  padding: 34px 30px;
   overflow: hidden;
   border-radius: var(--radius);
   background: var(--card);
@@ -1348,7 +1351,7 @@ li + li {
 }
 
 .skill-label {
-  margin: 0 0 48px;
+  margin: 0 0 14px;
   color: var(--accent);
   font-size: 11px !important;
   font-weight: 700;
@@ -1364,6 +1367,7 @@ li + li {
 
 .skill-grid p {
   margin: 0;
+  padding-right: 60px;
   color: var(--muted);
   font-size: 15px;
 }
