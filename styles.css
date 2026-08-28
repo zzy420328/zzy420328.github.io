@@ -2009,12 +2009,14 @@ li + li {
 }
 
 .practice-more .story-card {
+  min-height: 0;
   height: 100%;
 }
 
 .practice-more .story-card img {
   height: 100%;
-  min-height: 240px;
+  min-height: 180px;
+  max-height: 200px;
   object-fit: cover;
 }
 
