@@ -1322,6 +1322,10 @@ li + li {
   gap: 18px;
 }
 
+.skill-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .skill-card {
   position: relative;
   min-height: 310px;
