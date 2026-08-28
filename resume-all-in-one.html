@@ -1408,6 +1408,88 @@ li + li {
   margin-top: 16px;
 }
 
+/* ---------- 兴趣与特长 ---------- */
+
+.interest-section {
+  padding: 8px 0 82px;
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.interest-card {
+  position: relative;
+  padding: 28px 24px 24px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.interest-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+.interest-mark {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.interest-card.i1 .interest-mark {
+  background: linear-gradient(150deg, #0071e3, #5e5ce6);
+}
+.interest-card.i2 .interest-mark {
+  background: linear-gradient(150deg, #c77700, #e0a23a);
+}
+.interest-card.i3 .interest-mark {
+  background: linear-gradient(150deg, #00a5a5, #0071e3);
+}
+.interest-card.i4 .interest-mark {
+  background: linear-gradient(150deg, #5e5ce6, #a23ad6);
+}
+
+.interest-card h3 {
+  margin: 0 0 10px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.interest-card > p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.interest-tags span {
+  padding: 4px 11px;
+  border-radius: 980px;
+  background: var(--tint);
+  color: var(--accent-deep);
+  font-size: 12px;
+  font-weight: 600;
+}
+
 /* ---------- 其他经历 ---------- */
 
 .other-title {
@@ -1554,6 +1636,81 @@ li + li {
   background: var(--accent);
   font-size: 14px;
   font-weight: 700;
+}
+
+/* ---------- 研究方向 ---------- */
+
+.research-focus-section {
+  padding: 8px 0 20px;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.focus-card {
+  position: relative;
+  padding: 30px 28px 26px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, #ffffff 0%, #f2f7fd 100%);
+  border: 1px solid rgba(0, 113, 227, 0.12);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.focus-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--indigo));
+}
+
+.focus-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+.focus-index {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.focus-card h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.focus-card p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.focus-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.focus-tags span {
+  padding: 5px 12px;
+  border-radius: 980px;
+  background: rgba(0, 113, 227, 0.09);
+  color: var(--accent-deep);
+  font-size: 12.5px;
+  font-weight: 600;
 }
 
 .publication-section,
@@ -2131,6 +2288,14 @@ li + li {
     grid-template-columns: 1fr;
   }
 
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interest-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .competition-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2350,6 +2515,10 @@ li + li {
   .more-awards,
   .publication-list,
   .culture-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .interest-grid {
     grid-template-columns: 1fr;
   }
 
@@ -3112,6 +3281,34 @@ li + li {
       </article>
     </section>
 
+    <section class="research-focus-section">
+      <div class="section-heading">
+        <p class="eyebrow">Research Focus</p>
+        <h2>研究方向</h2>
+        <p class="sub">围绕固废资源化与高温 CO<sub>2</sub> 捕集，从材料制备到机理揭示形成完整研究链条。</p>
+      </div>
+      <div class="focus-grid">
+        <article class="focus-card">
+          <span class="focus-index">01</span>
+          <h3>锂基固体吸附剂设计</h3>
+          <p>面向 Li<sub>4</sub>SiO<sub>4</sub> 基高温 CO<sub>2</sub> 吸附材料的制备与改性，提升吸附容量、循环稳定性与再生性能。</p>
+          <div class="focus-tags"><span>Li₄SiO₄</span><span>吸附容量</span><span>循环稳定性</span></div>
+        </article>
+        <article class="focus-card">
+          <span class="focus-index">02</span>
+          <h3>固废资源化利用</h3>
+          <p>以废旧锂电池、废玻璃粉、β-锂辉石等固废为前驱体，实现低成本绿色制备与固废高值化利用。</p>
+          <div class="focus-tags"><span>废旧电池</span><span>废玻璃</span><span>β-锂辉石</span><span>低成本</span></div>
+        </article>
+        <article class="focus-card">
+          <span class="focus-index">03</span>
+          <h3>捕集机理与仿真</h3>
+          <p>结合实验表征与 DFT 计算，揭示掺杂与杂质对材料电子结构及 CO<sub>2</sub> 化学吸附行为的调控机理。</p>
+          <div class="focus-tags"><span>DFT 计算</span><span>电子结构</span><span>机理分析</span></div>
+        </article>
+      </div>
+    </section>
+
     <section class="publication-section">
       <div class="section-heading">
         <p class="eyebrow">Selected Publications</p>
@@ -3277,6 +3474,40 @@ li + li {
         <article class="skill-card"><span class="skill-index">01</span><p class="skill-label">Simulation</p><h3>热流仿真</h3><p>面向电子设备热设计，完成热—流耦合分析、散热路径识别与方案优化。</p><div class="skill-logos"><img loading="lazy" decoding="async" src="软件/ANSYS.png" alt="ANSYS" /><img loading="lazy" decoding="async" src="软件/FLUENT.png" alt="FLUENT" /><img loading="lazy" decoding="async" src="软件/icepak.png" alt="Icepak" /></div><div class="skill-tags"><strong>FLUENT</strong><strong>Icepak</strong><strong>热流耦合</strong></div></article>
         <article class="skill-card"><span class="skill-index">02</span><p class="skill-label">Modeling</p><h3>结构建模</h3><p>完成三维结构建模、工程图绘制，并为仿真前处理提供可靠几何基础。</p><div class="skill-logos"><img loading="lazy" decoding="async" src="软件/solidworks.png" alt="SolidWorks" /><img loading="lazy" decoding="async" src="软件/cad.png" alt="CAD" /><img loading="lazy" decoding="async" src="软件/C4D.png" alt="C4D" /></div><div class="skill-tags"><strong>SolidWorks</strong><strong>CAD</strong><strong>C4D</strong></div></article>
         <article class="skill-card"><span class="skill-index">03</span><p class="skill-label">Communication</p><h3>技术表达</h3><p>具备英文文献阅读、学术汇报与跨团队沟通能力，英语四、六级均为 520+。</p><div class="skill-tags"><strong>CET-6</strong><strong>国际会议</strong><strong>技术汇报</strong></div></article>
+      </div>
+    </section>
+
+    <section class="interest-section">
+      <div class="section-heading">
+        <p class="eyebrow">Beyond Work</p>
+        <h2>兴趣与特长</h2>
+        <p class="sub">专业之外，热爱艺术、生活与公益，保持多元而鲜活的成长节奏。</p>
+      </div>
+      <div class="interest-grid">
+        <article class="interest-card i1">
+          <span class="interest-mark">♪</span>
+          <h3>古筝 · 民乐</h3>
+          <p>曾任校民乐团团长，登台演出并带队斩获市级器乐铜奖。</p>
+          <div class="interest-tags"><span>古筝</span><span>舞台演出</span><span>器乐铜奖</span></div>
+        </article>
+        <article class="interest-card i2">
+          <span class="interest-mark">☕</span>
+          <h3>咖啡 · 茶艺</h3>
+          <p>校园咖啡师，掌握咖啡萃取与拉花，并教授咖啡与茶艺课程。</p>
+          <div class="interest-tags"><span>手冲咖啡</span><span>拉花</span><span>茶艺</span></div>
+        </article>
+        <article class="interest-card i3">
+          <span class="interest-mark">✦</span>
+          <h3>公益 · 志愿</h3>
+          <p>冬奥志愿者标兵，多次参与大型赛会与城市服务，乐于协作奉献。</p>
+          <div class="interest-tags"><span>冬奥标兵</span><span>赛会服务</span><span>城市巡游</span></div>
+        </article>
+        <article class="interest-card i4">
+          <span class="interest-mark">A</span>
+          <h3>英语 · 表达</h3>
+          <p>英语四、六级均 520+，具备英文文献阅读与国际会议汇报能力。</p>
+          <div class="interest-tags"><span>CET 520+</span><span>英文汇报</span><span>跨文化沟通</span></div>
+        </article>
       </div>
     </section>
 
