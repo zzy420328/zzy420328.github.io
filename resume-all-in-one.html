@@ -1505,9 +1505,10 @@ li + li {
 
 .research-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.52fr);
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.4fr);
   align-items: center;
-  gap: 56px;
+  gap: 48px;
+  max-width: 860px;
   padding: 38px;
   border-radius: var(--radius-lg);
   color: #fff;
@@ -1528,23 +1529,31 @@ li + li {
 .research-numbers {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 12px;
   margin: 0;
 }
 
 .research-numbers div {
   display: flex;
   align-items: baseline;
-  gap: 16px;
+  gap: 14px;
   padding-top: 0;
+}
+
+.research-numbers div:nth-child(2) {
+  margin-left: 26px;
+}
+
+.research-numbers div:nth-child(3) {
+  margin-left: 52px;
 }
 
 .research-numbers strong {
   color: #ffcc33;
-  font-size: 60px;
+  font-size: 46px;
   font-weight: 800;
   line-height: 1;
-  min-width: 66px;
+  min-width: 44px;
   text-align: right;
   text-shadow: 0 0 18px rgba(255, 204, 51, 0.35);
 }
