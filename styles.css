@@ -1396,6 +1396,10 @@ li + li {
   object-fit: contain;
 }
 
+.skill-logos + .skill-tags {
+  margin-top: 16px;
+}
+
 /* ---------- 其他经历 ---------- */
 
 .other-title {
