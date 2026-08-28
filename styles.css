@@ -1624,13 +1624,13 @@ li + li {
 
 .conference-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 22px;
 }
 
 .conference-grid article {
   display: grid;
-  grid-template-columns: 0.82fr 1.18fr;
+  grid-template-columns: 1.1fr 1fr;
   border-radius: var(--radius);
 }
 
@@ -1643,7 +1643,7 @@ li + li {
 
 .conf-images {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 4px;
 }
 
