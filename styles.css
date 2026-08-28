@@ -1519,18 +1519,16 @@ li + li {
 
 .research-numbers {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 14px;
   margin: 0;
 }
 
 .research-numbers div {
-  padding-top: 24px;
-}
-
-.research-numbers strong,
-.research-numbers span {
-  display: block;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding-top: 0;
 }
 
 .research-numbers strong {
@@ -1538,11 +1536,12 @@ li + li {
   font-size: 60px;
   font-weight: 800;
   line-height: 1;
+  min-width: 66px;
+  text-align: right;
   text-shadow: 0 0 18px rgba(255, 204, 51, 0.35);
 }
 
 .research-numbers span {
-  margin-top: 8px;
   color: rgba(255, 255, 255, 0.72);
   font-size: 14px;
   letter-spacing: 0.01em;
@@ -1632,8 +1631,14 @@ li + li {
 
 /* ---------- 研究方向 ---------- */
 
-.research-focus-section {
-  padding: 8px 0 20px;
+.research-focus {
+  padding: 4px 0 4px;
+}
+
+.focus-sub {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 17px;
 }
 
 .focus-grid {
