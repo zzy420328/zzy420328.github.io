@@ -1484,6 +1484,22 @@ li + li {
   font-size: 14px;
 }
 
+.first-author-badge-line {
+  margin: 0 0 14px;
+}
+
+.first-author-badge {
+  display: inline-block;
+  padding: 9px 22px;
+  border-radius: 980px;
+  background: linear-gradient(120deg, #ff6a3d, #ff3d77);
+  color: #fff;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  box-shadow: 0 10px 22px rgba(255, 61, 119, 0.34);
+}
+
 .paper-feature .paper-doi {
   margin: 22px 0 0;
   color: var(--ink);
