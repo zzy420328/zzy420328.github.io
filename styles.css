@@ -1973,10 +1973,6 @@ li + li {
   background: var(--card);
 }
 
-.practice-stagger figure:nth-child(2) {
-  margin-top: 40px;
-}
-
 .practice-stagger img {
   width: 100%;
   aspect-ratio: 3 / 4;
@@ -2009,6 +2005,17 @@ li + li {
 
 .practice-more {
   margin-top: 24px;
+  grid-auto-rows: 1fr;
+}
+
+.practice-more .story-card {
+  height: 100%;
+}
+
+.practice-more .story-card img {
+  height: 100%;
+  min-height: 240px;
+  object-fit: cover;
 }
 
 /* ---------- 页脚 ---------- */
