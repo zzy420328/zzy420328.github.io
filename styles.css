@@ -1497,11 +1497,10 @@ li + li {
 
 .research-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.4fr);
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.5fr);
   align-items: center;
   gap: 48px;
-  max-width: 860px;
-  padding: 38px;
+  padding: 38px 44px;
   border-radius: var(--radius-lg);
   color: #fff;
   background: linear-gradient(145deg, #111e31, #243c5c);
@@ -1533,19 +1532,19 @@ li + li {
 }
 
 .research-numbers div:nth-child(2) {
-  margin-left: 26px;
+  margin-left: 40px;
 }
 
 .research-numbers div:nth-child(3) {
-  margin-left: 52px;
+  margin-left: 80px;
 }
 
 .research-numbers strong {
   color: #ffcc33;
-  font-size: 46px;
+  font-size: 52px;
   font-weight: 800;
   line-height: 1;
-  min-width: 44px;
+  min-width: 50px;
   text-align: right;
   text-shadow: 0 0 18px rgba(255, 204, 51, 0.35);
 }
