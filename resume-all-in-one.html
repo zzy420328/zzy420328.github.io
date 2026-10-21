@@ -1199,6 +1199,44 @@ li + li {
   color: var(--muted);
 }
 
+.national-award {
+  margin-bottom: 24px;
+  border-color: #e4c98c;
+  background: linear-gradient(135deg, #fffaf0, #fff);
+}
+
+.national-award .certificate-frame {
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  padding: 24px;
+  background: #f7efdd;
+  color: #76541a;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.national-award img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  box-shadow: var(--shadow-soft);
+}
+
+.national-award .award-badge {
+  background: #f2e2b9;
+  color: #76541a;
+}
+
+.national-award .award-year {
+  color: #76541a;
+}
+
+.national-award h3 {
+  color: #60430f;
+  font-size: clamp(32px, 4vw, 48px);
+}
+
 .award-stack {
   display: grid;
   gap: 14px;
@@ -3520,8 +3558,20 @@ li + li {
     <section class="award-section">
       <div class="section-heading award-heading">
         <div><p class="eyebrow">Academic Recognition</p><h2>奖学金与荣誉</h2></div>
-        <p>从本科到硕士，保持连续、稳定的学业表现。</p>
+        <p>以国家奖学金为代表，记录学业与科研积累。</p>
       </div>
+      <article class="featured-award national-award">
+        <a class="certificate-frame" href="assets/supplement/scholarship-national-2026.png" target="_blank" rel="noopener" aria-label="查看 2026 年研究生国家奖学金获奖公示截图">
+          <img loading="lazy" decoding="async" src="assets/supplement/scholarship-national-2026.png" alt="华中科技大学能源与动力工程学院 2026 年研究生国家奖学金名单公示，硕士名单含张子悦" />
+          <span>查看公示材料 ↗</span>
+        </a>
+        <div class="featured-award-copy">
+          <span class="award-badge">国家级荣誉</span>
+          <p class="award-year">2026 年 9 月</p>
+          <h3>国家奖学金</h3>
+          <p>研究生国家奖学金<br />华中科技大学 · 能源与动力工程学院</p>
+        </div>
+      </article>
       <div class="scholarship-layout">
         <article class="featured-award">
           <a class="certificate-frame certificate-pair" href="assets/supplement/scholarship-master-2025.png" target="_blank" rel="noopener" aria-label="查看硕士一等学业奖学金证书">
