@@ -6,7 +6,7 @@
 
 - `index.html`：教育背景
 - `internship.html`：实习经历
-- `projects.html`：项目经历
+- `projects.html`：项目经历，采用纵向宽卡片展示钙循环碳捕集、固体吸附材料研发与电池热管理三个项目。每个项目按「项目简介」「我的主要工作」「成果」组织；内容与布局同步维护至 `resume-all-in-one.html`。
 - `awards.html`：奖项和竞赛
 - `styles.css`：全站样式
 

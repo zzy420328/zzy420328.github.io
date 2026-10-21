@@ -950,8 +950,8 @@ li + li {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
   padding-bottom: 70px;
 }
 
@@ -966,6 +966,7 @@ li + li {
 
 .project-head {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: 14px;
@@ -1002,6 +1003,43 @@ li + li {
   margin: 16px 0 0;
   padding-left: 19px;
   font-size: 15px;
+}
+
+.project-section {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 16px;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.project-section h3 {
+  margin: 0;
+  color: var(--accent-deep);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.project-section p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.project-section ul {
+  margin: 0;
+}
+
+.project-section .result-bar {
+  padding-top: 14px;
+}
+
+@media (max-width: 720px) {
+  .project-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
 }
 
 .result-bar {
